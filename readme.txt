@@ -1,1 +1,1 @@
-Learning prjject MDK-05.02
+Learning project MDK-05.02
