@@ -22,5 +22,19 @@
     $res2 = ($x+$y)/($y+1)-($x*$y-12)/(13+$x);
     echo "x = $x, y = $y, result = $res2";
     ?>
+    <h1>Формула 3</h1>
+    <?php 
+    $x = 3;
+    $y = 6;
+    $res3 = (($x+1)/($x-1))**$x + 18*$x*$y**2;
+    echo "x = $x, y = $y, result = $res3";
+    ?>
+    <h1>Формула 4</h1>
+    <?php 
+    $x = 3;
+    $y = 6;
+    $res4 = (1+(1/($x**2))**$x) - 12*($x**2)*$y;
+    echo "x = $x, y = $y, result = $res4";
+    ?>
 </body>
 </html>
