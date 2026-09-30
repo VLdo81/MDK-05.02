@@ -24,7 +24,20 @@
     <?php 
     $str = 'Я изучаю php';
     $str1 = "Переменная а = $a";
-    echo $str, '<br>', $str1;
+    $str2 = "'WWW'";
+    echo $str, '<br>', $str1, '<br>', $str2;
+    ?>
+    <h2>Логические значения - bool</h2>
+    <?php 
+    $t = true;
+    $f = false;
+    echo "t = $t, f = $f";
+    ?>
+    <h2>Специальное значение - null</h2>
+    <?php 
+    $n = null;
+    $y;
+    echo "n = $n";
     ?>
 </body>
 </html>
