@@ -6,31 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Изучаем PHP</h1>
-    <h2>Вывод на экран</h2>
+    <h1>Данных в PHP</h1>
+    <h2>Целые числа</h2>
     <?php
-    echo 'Вывод через команду echo';
-    ?>
-    <h3>Сокращённый echo</h3>
-    <?= 'Вывод через сокращённое echo' ?>
-    <h3>Вывод чисел</h3>
-    <?php
-    echo 12345;
-    ?>
-    <h3>Переменные</h3>
-    <?php 
-    $number = 42;
-    $num1 = $number * 4;
-    echo $num1;
-    ?>
-    <h3>Арифметические операции</h3>
-    <p>+ - * / ** %</p>
-    <?php 
-    $a = 5;
-    $b = 10;
-    $c = 8;
-    $res= ($a + $b) * $c;
-    echo "a = $a, b = $b, c= $c, result = $res"; 
+    $number = 100;
+    echo $number;
     ?>
 </body>
 </html>
