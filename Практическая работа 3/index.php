@@ -55,5 +55,27 @@
     }
     echo "<br> days = $days";
     ?>
+    <h2>Задача 5</h2>
+    <?php 
+     $TotalLegs = 64;
+     $rabbitLegs = 4;
+     $gooseLegs = 2;
+     for ($rabbits = 0; $rabbits <= ($TotalLegs / $rabbitLegs); $rabbits++) {
+        $remainLegs = $TotalLegs - ($rabbits * $rabbitLegs);
+        $geese = $remainLegs / $gooseLegs;
+     }
+     echo "Кроликов: $rabbits, Гусей: $geese";
+    ?>
+    <h2>Задача 6</h2>
+    <?php 
+    $hour = 0;
+    $ameba = 1;
+    while ($hour < 24) {
+        $ameba = $ameba * 2;
+        $hour += 3;
+        echo "$ameba ";
+    }
+    echo "<br> Часы: $hour";
+    ?>
 </body>
 </html>
