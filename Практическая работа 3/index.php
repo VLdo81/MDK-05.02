@@ -44,5 +44,16 @@
     $lastNumber = $lastNumber -2;
     echo "<br> last number = $lastNumber";
     ?>
+    <h2>Задача 4</h2>
+    <?php 
+    $n = 10;
+    $days = 1;
+    while ($days < 10) {
+        $n = $n + ($n * 0.1);
+        $days++;
+        echo "$n ";
+    }
+    echo "<br> days = $days";
+    ?>
 </body>
 </html>
