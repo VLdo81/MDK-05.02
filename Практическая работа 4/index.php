@@ -57,7 +57,19 @@
     </table>
     <h2>Задача 5</h2>
     <?php 
-    
+    $a = 5;
+    $b = 3;
+    for ($i = 0; $i < $a; $i++) {
+        for ($j = 1; $j < $b; $j++) {
+            if ($i == 1 || $i == $a || $j == 1 || $j == $b) {
+                echo '#';
+            }
+            else {
+                echo '.';
+            }
+        }
+        echo '\n'; 
+    }
     ?>
 </body>
 </html>
