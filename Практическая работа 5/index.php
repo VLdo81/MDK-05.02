@@ -173,6 +173,51 @@
                 break;
         }
     }
+    else {
+        echo "Данные не получены";
+    }
+    ?>
+    <h2>Задача 5</h2>
+   <select name="numb" id="numb" required>
+            <option value="1" <?= (isset($_GET['numb']) && $_GET['numb'] == '1') ? 'selected' : '' ?>>1 — килограмм</option>
+            <option value="2" <?= (isset($_GET['numb']) && $_GET['numb'] == '2') ? 'selected' : '' ?>>2 — миллиграмм</option>
+            <option value="3" <?= (isset($_GET['numb']) && $_GET['numb'] == '3') ? 'selected' : '' ?>>3 — грамм</option>
+            <option value="4" <?= (isset($_GET['numb']) && $_GET['numb'] == '4') ? 'selected' : '' ?>>4 — тонна</option>
+            <option value="5" <?= (isset($_GET['numb']) && $_GET['numb'] == '5') ? 'selected' : '' ?>>5 — центнер</option>
+    <form action="">
+        <p>Введите массу:</p>
+        <input name="mass">
+        <input type="submit" value="Отправить">
+    </form>
+    <?php 
+    if (isset($_GET["numb"]) & isset($_GET["mass"])) {
+        $numb = $_GET["numb"];
+        $mass = $_GET["mass"];
+        switch ($numb) {
+            case 1:
+                echo "$mass кг";
+                break;
+            case 2:
+                $mass /= 1000000;
+                echo "$mass кг";
+                break;
+            case 3:
+                $mass *= 1000;
+                echo "$mass кг";
+                break;
+            case 4:
+                $mass *= 1000;
+                echo "$mass кг";
+                break;
+            case 5:
+                $mass *= 100;
+                echo "$mass кг";
+                break;
+        }
+    }
+    else {
+        echo "Данные не получены";
+    }
     ?>
 </body>
 </html>
