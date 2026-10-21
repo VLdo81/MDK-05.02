@@ -42,5 +42,15 @@
         echo "$key - $value <br>";
     }
     ?>
+    <h2>Поиск максимума</h2>
+    <?php 
+    $max = $numbers[0];
+    foreach ($numbers as $key => $value) {
+        if ($value > $max) {
+            $max = $value;
+        }
+    }
+    echo "Максимум = $max";
+    ?>
 </body>
 </html>
