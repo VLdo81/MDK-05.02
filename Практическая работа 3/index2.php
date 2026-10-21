@@ -6,219 +6,95 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Практическая работа 5</h1>
     <h2>Задача 1</h2>
-    <form action="">
-        <p>Введите число:</p>
-        <input name="number">
-        <input type="submit" value="Отправить">
-    </form>
-    <?php 
-    if (isset($_GET["number"])) {
-        $a = $_GET["number"];
-        switch ($a) {
-            case 0:
-                echo '0 - zero';
-                break;
-            case 1:
-                echo '1 - one';
-                break;
-            case 2:
-                echo '2 - two';
-                break;
-            case 3:
-                echo '3 - three';
-                break;
-            case 4:
-                echo '4 - four';
-                break;
-            case 5:
-                echo '5 - five';
-                break;
-            case 6:
-                echo '6 - six';
-                break;
-            case 7:
-                echo '7 - seven';
-                break;
-            case 8:
-                echo '8 - eight';
-                break;
-            case 9:
-                echo '9 - nine';
-                break;
+    <?php
+    for ($i = 1; $i <= 9; $i++) {
+        for ($j = 1; $j <= 9; $j++) {
+            echo $i . " * " . $j . " = " . ($i * $j) . " | ";
         }
-    }
-    else {
-        echo 'Данные не получены';
+        echo "<br>";
     }
     ?>
+
     <h2>Задача 2</h2>
-    <form action="">
-        <p>Введите номер месяца:</p>
-        <input name="month">
-        <input type="submit" value="Отправить">
-    </form>
-    <?php 
-    if (isset($_GET['month'])) {
-        $month = $_GET["month"];
-        switch ($month) {
-            case 1:
-                echo '1 января — Новый год, 7 января — Рождество Христово, 14 января — Старый Новый год, 19 января — Крещение Господне';
-                break;
-            case 2:
-                echo '14 февраля — День святого Валентина, 23 февраля — День защитника Отечества';
-                break;
-            case 3:
-                echo '8 марта — Международный женский день';
-                break;
-            case 4:
-                echo '1 апреля — День смеха, 12 апреля — День космонавтики';
-                break;
-            case 5:
-                echo '1 мая — Праздник Весны и Труда, 9 мая — День Победы';
-                break;
-            case 6:
-                echo '1 июня — Международный день защиты детей, 12 июня — День России';
-                break;
-            case 7:
-                echo '8 июля — День семьи, любви и верности';
-                break;
-            case 8:
-                echo '22 августа — День Государственного флага РФ';
-                break;
-            case 9:
-                echo '1 сентября — День знаний';
-                break;
-            case 10:
-                echo '5 октября — День учителя, 31 октября — Хэллоуин';
-                break;
-            case 11:
-                echo '4 ноября — День народного единства';
-                break;
-            case 12:
-                echo '12 декабря — День Конституции РФ, 31 декабря — Новогодняя ночь';
-                break;
+    <?php
+    $a = 4;
+    $b = 3;
+    for ($i = 0; $i < $b; $i++) {
+        for ($j = 0; $j < $a; $j++) {
+            echo "X";
         }
-    }
-    else {
-        echo 'Данные не получены';
+        echo "<br>";
     }
     ?>
+
     <h2>Задача 3</h2>
-    <form action="">
-        <p>Введите число:</p>
-        <input name="num">
-        <input type="submit" value="Отправить">
-    </form>
-    <?php 
-    if (isset($_GET['num'])) {
-        $number = $_GET['num'];
-        $a = $number % 10;
-        switch ($a) {
-            case 0:
-                echo '0';
-                break;
-            case 5:
-                echo '5';
-                break;
-            case 1 || 9:
-                echo '1';
-                break;
-            case 2 || 8:
-                echo '4';
-                break;
-            case 3 || 7:
-                echo '9';
-                break;
-            case 4 || 6:
-                echo '6';
-                break;
+    <table border="1" cellpadding="5">
+    <?php
+    for ($i = 1; $i <= 9; $i++) {
+        echo "<tr>";
+        for ($j = 1; $j <= 9; $j++) {
+            echo "<td>" . ($i * $j) . "</td>";
         }
-    }
-    else {
-        echo 'Данные не получены';
+        echo "</tr>";
     }
     ?>
+    </table>
+
     <h2>Задача 4</h2>
-    <form action="">
-        <p>Введите свой возраст:</p>
-        <input name="age">
-        <input type="submit" value="Отправить">
-    </form>
-    <?php 
-    if (isset($_GET['age'])) {
-        $age = $_GET['age'];
-        switch ($age) {
-            case 11:
-                echo "Мне 11 лет";
-                break;
-            case 12:
-                echo "Мне 12 лет";
-                break;
-            case 13:
-                echo "Мне 13 лет";
-                break;
-            case 14:
-                echo "Мне 14 лет";
-                break;
-            case $age % 10 == 1:
-                echo "Мне $age год";
-                break;
-            case $age % 10 == (2 || 3 || 4):
-                echo "Мне $age года";
-                break;
-            case $age % 10 == (5 || 6 || 7 || 8 || 9 || 0):
-                echo "Мне $age лет";
-                break;
+    <table border="1" cellpadding="5">
+    <?php
+    for ($i = 1; $i <= 9; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j <= 9; $j++) {
+            $num = $i * 10 + $j;
+            echo "<td>" . ($num * $num) . "</td>";
         }
-    }
-    else {
-        echo "Данные не получены";
+        echo "</tr>";
     }
     ?>
+    </table>
+
     <h2>Задача 5</h2>
-    <form action=""></form>
-        <select name="numb" id="numb" required>
-            <option value="1" <?= (isset($_GET['numb']) && $_GET['numb'] == '1') ? 'selected' : '' ?>>1 — килограмм</option>
-            <option value="2" <?= (isset($_GET['numb']) && $_GET['numb'] == '2') ? 'selected' : '' ?>>2 — миллиграмм</option>
-            <option value="3" <?= (isset($_GET['numb']) && $_GET['numb'] == '3') ? 'selected' : '' ?>>3 — грамм</option>
-            <option value="4" <?= (isset($_GET['numb']) && $_GET['numb'] == '4') ? 'selected' : '' ?>>4 — тонна</option>
-            <option value="5" <?= (isset($_GET['numb']) && $_GET['numb'] == '5') ? 'selected' : '' ?>>5 — центнер</option>
-        </select>
-        <p>Введите массу:</p>
-        <input name="mass">
-        <input type="submit" value="Отправить">
-    </form>
-    <?php 
-    if (isset($_GET["numb"]) && isset($_GET["mass"])) {
-        $numb = $_GET["numb"];
-        $mass = $_GET["mass"];
-        switch ($numb) {
-            case 1:
-                echo "$mass кг";
-                break;
-            case 2:
-                $mass /= 1000000;
-                echo "$mass кг";
-                break;
-            case 3:
-                $mass *= 1000;
-                echo "$mass кг";
-                break;
-            case 4:
-                $mass *= 1000;
-                echo "$mass кг";
-                break;
-            case 5:
-                $mass *= 100;
-                echo "$mass кг";
-                break;
+    <?php
+    $a = 6;
+    $b = 4;
+    for ($i = 0; $i < $b; $i++) {
+        for ($j = 0; $j < $a; $j++) {
+            if ($i == 0 || $i == $b - 1 || $j == 0 || $j == $a - 1) {
+                echo "X";
+            } else {
+                echo "O";
+            }
+        }
+        echo "<br>";
+    }
+    ?>
+
+    <h2>Задача 6</h2>
+    <?php
+    $n = 24;
+    for ($i = 1; $i <= $n; $i++) {
+        for ($j = 1; $j <= 1; $j++) {
+            if ($n % $i == 0) {
+                echo $i . " ";
+            }
         }
     }
-    else {
-        echo "Данные не получены";
+    ?>
+
+    <h2>Задача 7</h2>
+    <?php
+    $k_num = 345;
+    $prod = 1;
+    for (; $k_num > 0; ) {
+        for ($j = 0; $j < 1; $j++) {
+            $digit = $k_num % 10;
+            $prod *= $digit;
+            $k_num = (int)($k_num / 10);
+        }
     }
+    echo $prod;
     ?>
 </body>
 </html>

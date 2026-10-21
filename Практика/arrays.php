@@ -21,7 +21,13 @@
     ?>
     <h2>Перебор массива</h2>
     <?php 
-    
+    for ($i = 0; $i < count($numbers); $i++) {
+        echo $numbers[$i], ' ';
+    }
+    ?>
+    <h2>Элементы массива</h2>
+    <?php 
+    echo $numbers[0];
     ?>
 </body>
 </html>
