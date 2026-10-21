@@ -36,5 +36,11 @@
     $numbers[] = 777;
     var_dump($numbers);
     ?>
+    <h2>Цикл foreach</h2>
+    <?php 
+    foreach ($numbers as $key => $value) {
+        echo "$key - $value <br>";
+    }
+    ?>
 </body>
 </html>
