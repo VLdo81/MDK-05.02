@@ -28,6 +28,13 @@
     <h2>Элементы массива</h2>
     <?php 
     echo $numbers[0];
+    $numbers[2] = '$$$';
+    echo $numbers[2];
+    ?>
+    <h2>Добавление элемента</h2>
+    <?php 
+    $numbers[] = 777;
+    var_dump($numbers);
     ?>
 </body>
 </html>
