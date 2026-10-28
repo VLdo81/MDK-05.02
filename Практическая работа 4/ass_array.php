@@ -15,29 +15,42 @@
     }
     ?>
     <h2>Задание 2</h2>
-    <form action="">
-        <p>Введите слово:</p>
-        <input name="word">
-        <input type="submit" value="Отправить">
-    </form>
     <?php 
-    if (isset($_GET["word"])) {
-        $word = $_GET['word'];
-        $found = false;
-        foreach($days as $key => $value) {
-            if (str_contains($value, $word)) {
-                echo "$word - $key";
-                $found = true;
-                break;
-            }
+    $word = "неделя";
+    $found = false;
+    foreach($days as $key => $value) {
+        if (str_contains($value, $word)) {
+            echo "$word - $key";
+            $found = true;
+            break;
         }
-        if ($found == false) {
-            echo "$word - В словаре нет такого слова";
-        }
+    }
+    if ($found == false) {
+        echo "$word - В словаре нет такого слова";
     }
     ?>
     <h2>Задание 3</h2>
-    <form action="">
+    <?php 
+    $word = "week";
+    $found = false;
+    foreach($days as $key => $value) {
+        if (str_contains($value, $word)) {
+            echo "$word - $key";
+            $found = true;
+            break;
+        }
+        elseif (str_contains($key, $word)) {
+            echo "$word - $value";
+            $found = true;
+            break;
+        }
+    }
+    if ($found == false) {
+        echo "$word - В словаре нет такого слова";
+    }
+    ?>
+    <h2>Задание 4</h2>
+     <form action="">
         <p>Введите слово:</p>
         <input name="wrd">
         <input type="submit" value="Отправить">
