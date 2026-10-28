@@ -99,5 +99,21 @@
     }
     ?>
     <h2>Задание 7</h2>
+    <?php 
+    $words = ['потолок', 'кошка', 'семь', 'семячко', 'пол', 'реле'];
+    $res = [];
+    foreach ($words as $word) {
+        $len = mb_strlen($word);
+        if (!isset($res[$len])) {
+            $res[$len] = $word;
+        }
+        else {
+            $res[$len] .= " " . $word;
+        }
+    }
+    foreach ($res as $key => $value) {
+        echo "$key - $value <br>";
+    }
+    ?>
 </body>
 </html>
