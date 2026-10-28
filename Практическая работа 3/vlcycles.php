@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Практическая работа 3</h1>
     <h2>Задача 1</h2>
     <?php
     for ($i = 1; $i <= 9; $i++) {
