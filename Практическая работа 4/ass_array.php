@@ -9,7 +9,7 @@
     <h1>Практическая работа 4</h1>
     <h2>Задание 1</h2>
     <?php 
-    $days = ['monday' => 'понедельник', 'tuesday' => 'вторник', 'wednesday' => 'среда', 'thursday' => 'четверг', 'friday' => 'пятница', 'saturday' => 'суббота', 'sunday' => 'воскресенье', 'weekdays' => 'будние дни', 'weekend' => 'выходные'];
+    $days = ['monday' => 'понедельник', 'tuesday' => 'вторник', 'wednesday' => 'среда', 'thursday' => 'четверг', 'friday' => 'пятница', 'saturday' => 'суббота', 'sunday' => 'воскресенье', 'week' => 'неделя', 'weekdays' => 'будние дни', 'weekend' => 'выходные'];
     foreach ($days as $key => $value) {
         echo "$key - $value <br>";
     }
@@ -87,5 +87,17 @@
     }
     }
     ?>
+    <h2>Задание 6</h2>
+    <?php 
+    $days = ['monday' => 'понедельник', 'tuesday' => 'вторник', 'wednesday' => 'среда', 'thursday' => 'четверг', 'friday' => 'пятница', 'saturday' => 'суббота', 'sunday' => 'воскресенье', 'week' => 'неделя', 'weekdays' => 'будние дни', 'weekend' => 'выходные'];
+    $new = [];
+    foreach ($days as $key => $value) {
+        $new[$value] = $key;
+    }
+    foreach ($new as $key => $value) {
+        echo "$key - $value <br>";
+    }
+    ?>
+    <h2>Задание 7</h2>
 </body>
 </html>
