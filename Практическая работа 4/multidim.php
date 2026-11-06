@@ -37,16 +37,97 @@
     <h2>Задание 3</h2>
     <?php 
     $nms = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]];
-    foreach ($nms as $group) {
-        foreach ($group as $key => $nm) {
+    $max = $nms[0][0];
+    $min = $nms[0][0];
+    $maxg = 0;
+    $maxv = 0;
+    $ming = 0;
+    $minv = 0;
+    foreach ($nms as $key => $group) {
+        foreach ($group as $key1 => $nm) {
             if ($nm > $max) {
                 $max = $nm;
+                $maxg = $key;
+                $maxv = $key1;
             }
             if ($nm < $min) {
                 $min = $nm;
+                $ming = $key;
+                $minv = $key1;
             }
         }
     }
+    echo "Максимум = $key, $key1 - $max <br> Минимум = $key, $key1 - $min";
+    ?>
+    <h2>Задание 4</h2>
+    <?php 
+    $num = 10;
+    $grid = [];
+    foreach (range(0, $num - 1) as $i) {
+        foreach (range(0, $num - 1) as $j) {
+            $grid[$i][$j] = abs($i - $j);
+        }
+    }
+    foreach ($grid as $row) {
+        foreach ($row as $val) {
+            echo $val . " ";
+        }
+        echo "<br>";
+    }
+    ?>
+    <h2>Задание 5</h2>
+    <?php 
+    $shop = ["Обувь" => ["Nike" => "Кроссовки Air Max", "Adidas" => "Кеды Superstar"], "Одежда" => ["Puma" => "Спортивный костюм", "Under Armour" => "Футболка", "Reebok" => "Худи"], "Инвентарь" => [], "Аксессуары" => ["Spalding" => "Баскетбольный мяч"]];
+    foreach ($shop as $category => $products) {
+        echo "Категория: " . $category . "<br>";
+        if ($products == []) {
+            echo "Здесь пока нет товаров <br>";
+        }
+        else {
+            foreach ($products as $brand => $name) {
+                echo "- " . $brand . " " . $name . "<br>";
+            }
+        }
+    }
+    ?>
+    <h2>Задание 6</h2>
+    <?php 
+    $shop = ["Обувь" => ["Nike" => "Кроссовки Air Max", "Adidas" => "Кеды Superstar"], "Одежда" => ["Puma" => "Спортивный костюм", "Under Armour" => "Футболка", "Reebok" => "Худи"], "Инвентарь" => [], "Аксессуары" => ["Spalding" => "Баскетбольный мяч"]];
+    $newcat = "Продукты";
+    $shop[$newcat] = [];
+    foreach ($shop as $category => $products) {
+        echo "Категория: " . $category . "<br>";
+        if ($products == []) {
+            echo "Здесь пока нет товаров <br>";
+        }
+        else {
+            foreach ($products as $brand => $name) {
+                echo "- " . $brand . " " . $name . "<br>";
+            }
+        }
+    }
+    ?>
+    <h2>Задание 7</h2>
+    <?php 
+    $newprod = ["Optimum Nutrition" => "Протеин Whey", "BioTech" => "BCAA"];
+    foreach ($newprod as $brand => $name) {
+        $shop[$newcat][$brand] = $name;
+    }
+    foreach ($shop as $category => $products) {
+        echo "Категория: " . $category . "<br>";
+        if ($products == []) {
+            echo "Здесь пока нет товаров <br>";
+        }
+        else {
+            foreach ($products as $brand => $name) {
+                echo "- " . $brand . " " . $name . "<br>";
+            }
+        }
+    }
+    ?>
+    <h2>Задание 8</h2>
+    <?php 
+    
     ?>
 </body>
 </html>
