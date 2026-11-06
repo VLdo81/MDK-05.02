@@ -127,7 +127,27 @@
     ?>
     <h2>Задание 8</h2>
     <?php 
-    
+    $inputcat = "Одежда";
+    $inputprod = ["Asics" => "Ветровка", "Nike" => "Шорты беговые"];
+    if (isset($shop[$inputcat])) {
+        foreach ($inputprod as $brand => $name) {
+            $shop[$inputcat][$brand] = $name;
+        }
+    }
+    else {
+        $shop[$inputcat] = $inputprod;
+    }
+    foreach ($shop as $category => $products) {
+        echo "Категория: " . $category . "<br>";
+        if ($products == []) {
+            echo "Здесь пока нет товаров <br>";
+        }
+        else {
+            foreach ($products as $brand => $name) {
+                echo "- " . $brand . " " . $name . "<br>";
+            }
+        }
+    }
     ?>
 </body>
 </html>
