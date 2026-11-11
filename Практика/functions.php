@@ -48,7 +48,8 @@
     {
         return "<p>$name, $lastname, роль - $role</p>";
     }
-    echo getUserInfo('Маша', 'Иванова');
+    $info = getUserInfo('Маша', 'Иванова');
+    echo $info;
     ?>
 </body>
 </html>
