@@ -107,7 +107,8 @@
     ?>
     <h2>Задание 8</h2>
     <?php 
-    function convToString(array $data) {
+    function convToString(array $data) 
+    {
         $result = [];
         foreach ($data as $item) {
             if (is_array($item)) {
@@ -118,7 +119,6 @@
         }
         return implode(', ', $result);
     }
-
     echo convToString(['apple', 42, [1, 2, ['a', 'b']], 'banana']);
     ?>
 </body>
