@@ -8,25 +8,40 @@
 <body>
     <h1>Практическая работа 5</h1>
     <h2>Задание 1</h2>
-    <?php 
-    $str = "hello, my name is (Gustav)";
-    $len = strlen($str);
-    $inside = false;
-    $res = '';
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] == ')') {
-            break;
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str1">
+        <input type="submit" value="Отправить">
+    </form>
+    <?php
+    if(isset($_GET["str1"])) {
+        $str = $_GET["str1"];
+        function task1($str) {
+            $len = strlen($str);
+            $inside = false;
+            $res = '';
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] == ')') {
+                    break;
+                }
+                if ($inside == True) {
+                    $res .= $str[$i];
+                }
+                if ($str[$i] == '(') {
+                    $inside = true;
+                }
+            }
+            echo $res;
         }
-        if ($inside == True) {
-            $res .= $str[$i];
-        }
-        if ($str[$i] == '(') {
-            $inside = true;
-        }
-    }
-    echo $res;
+        task1($str);
+    } 
     ?>
     <h2>Задание 2</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str2">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = "Oh hello there.";
     $word = 0;
@@ -39,6 +54,11 @@
     echo $word;
     ?>
     <h2>Задание 3</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str3">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = "did you make tart";
     $len = strlen($str);
@@ -65,6 +85,11 @@
     }
     ?>
     <h2>Задание 4</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str4">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = 'abracadabra';
     $len = strlen($str);
@@ -87,6 +112,11 @@
     }
     ?>
     <h2>Задание 5</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str5">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = "railway from saint-petersburg to krakow";
     $len = strlen($str);
@@ -107,6 +137,11 @@
     echo "r = $r, t = $t, k = $k";
     ?>
     <h2>Задание 6</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str6">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = "What are you doing in my swamp?";
     function delspc($string) {
@@ -122,6 +157,11 @@
     delspc($str);
     ?>
     <h2>Задание 7</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str7">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = 'Find the shortest and longest word';
     $len = strlen($str);
@@ -150,6 +190,11 @@
     echo "Min: $min, Max: $max";
     ?>
     <h2>Задание 8</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str8">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = 'baaaabaaabaaaaaab';
     $len = strlen($str);
@@ -169,6 +214,11 @@
     echo $max;
     ?>
     <h2>Задание 9</h2>
+    <form action="">
+        <p>Введите строку:</p>
+        <input name="str9">
+        <input type="submit" value="Отправить">
+    </form>
     <?php 
     $str = 'Delete (this part) please';
     $len = strlen($str);
