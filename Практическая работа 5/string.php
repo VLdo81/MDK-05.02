@@ -43,15 +43,20 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = "Oh hello there.";
-    $word = 0;
-    $len = strlen($str);
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] == " " | $str[$i] == ".") {
-            $word += 1;
+    if (isset($_GET["str2"])) {
+        $str = $_GET["str2"];
+        function task2($str) {
+            $word = 0;
+            $len = strlen($str);
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] == " " | $str[$i] == ".") {
+                    $word += 1;
+                }
+            }
+            echo $word;
         }
+        task2($str);
     }
-    echo $word;
     ?>
     <h2>Задание 3</h2>
     <form action="">
@@ -60,28 +65,33 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = "did you make tart";
-    $len = strlen($str);
-    $words = "";
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] != ' ' && $str[$i] != '.' && $str[$i] != ',') {
-            $words .= $str[$i];
-        } 
-        else {
+    if (isset($_GET["str3"])) {
+        $str = $_GET["str3"];
+        function task3($str) {
+            $len = strlen($str);
+            $words = "";
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] != ' ' && $str[$i] != '.' && $str[$i] != ',') {
+                    $words .= $str[$i];
+                } 
+                else {
+                    if ($words != '') {
+                        $wLen = strlen($words);
+                        if ($words[0] == $words[$wLen - 1]) {
+                            echo $words . ' ';
+                        }
+                        $words = '';
+                    }
+                }
+            }
             if ($words != '') {
                 $wLen = strlen($words);
                 if ($words[0] == $words[$wLen - 1]) {
-                    echo $words . ' ';
+                    echo $words;
                 }
-                $words = '';
             }
         }
-    }
-    if ($words != '') {
-        $wLen = strlen($words);
-        if ($words[0] == $words[$wLen - 1]) {
-            echo $words;
-        }
+        task3($str);
     }
     ?>
     <h2>Задание 4</h2>
@@ -91,24 +101,29 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = 'abracadabra';
-    $len = strlen($str);
-    $unique = [];
-    for ($i = 0; $i < $len; $i++) {
-        $found = false;
-        for ($j = 0; $j < count($unique); $j++) {
-            if ($unique[$j] == $str[$i]) {
-                $found = true;
-                break;
+    if (isset($_GET["str4"])) {
+        $str = $_GET["str4"];
+        function task4($str) {
+            $len = strlen($str);
+            $unique = [];
+            for ($i = 0; $i < $len; $i++) {
+                $found = false;
+                for ($j = 0; $j < count($unique); $j++) {
+                    if ($unique[$j] == $str[$i]) {
+                        $found = true;
+                        break;
+                    }
+                }
+                if (!$found) {
+                    $unique[] = $str[$i];
+                }
+            }
+            echo count($unique) . "<br>";
+            foreach ($unique as $symbol) {
+                echo $symbol . " ";
             }
         }
-        if (!$found) {
-            $unique[] = $str[$i];
-        }
-    }
-    echo count($unique) . "<br>";
-    foreach ($unique as $symbol) {
-        echo $symbol . " ";
+        task4($str);
     }
     ?>
     <h2>Задание 5</h2>
@@ -118,23 +133,28 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = "railway from saint-petersburg to krakow";
-    $len = strlen($str);
-    $r = 0;
-    $t = 0;
-    $k = 0;
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] == "r") {
-            $r++;
+    if (isset($_GET["str5"])) {
+        $str = $_GET["str5"];
+        function task5($str) {
+            $len = strlen($str);
+            $r = 0;
+            $t = 0;
+            $k = 0;
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] == "r") {
+                    $r++;
+                }
+                if ($str[$i] == "t") {
+                    $t++;
+                }
+                if ($str[$i] == "k") {
+                    $k++;
+                }
+            }
+            echo "r = $r, t = $t, k = $k";
         }
-         if ($str[$i] == "t") {
-            $t++;
-        }
-         if ($str[$i] == "k") {
-            $k++;
-        }
+        task5($str);
     }
-    echo "r = $r, t = $t, k = $k";
     ?>
     <h2>Задание 6</h2>
     <form action="">
@@ -143,18 +163,20 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = "What are you doing in my swamp?";
-    function delspc($string) {
-        $len = strlen($string);
-        $result = "";
-        for ($i = 0; $i < $len; $i++) {
-            if ($string[$i] != " ") {
-                $result .= $string[$i];
+    if (isset($_GET["str6"])) {
+        $str = $_GET["str6"];
+        function delspc($string) {
+            $len = strlen($string);
+            $result = "";
+            for ($i = 0; $i < $len; $i++) {
+                if ($string[$i] != " ") {
+                    $result .= $string[$i];
+                }
             }
+            echo $result;
         }
-        echo $result;
+        delspc($str);   
     }
-    delspc($str);
     ?>
     <h2>Задание 7</h2>
     <form action="">
@@ -163,31 +185,36 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = 'Find the shortest and longest word';
-    $len = strlen($str);
-    $min = 0;
-    $max = 0;
-    $cur = 0;
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] != ' ' & $str[$i] != '.' & $str[$i] != ',') {
-            $cur++;
-        } 
-        else {
+    if (isset($_GET["str7"])) {
+        $str = $_GET["str7"];
+        function task7($str) {
+            $len = strlen($str);
+            $min = 0;
+            $max = 0;
+            $cur = 0;
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] != ' ' & $str[$i] != '.' & $str[$i] != ',') {
+                    $cur++;
+                } 
+                else {
+                    if ($cur > 0) {
+                        if ($min == 0 | $cur < $min) $min = $cur;
+                        if ($cur > $max) $max = $cur;
+                        $cur = 0;
+                    }
+                }
+            }
             if ($cur > 0) {
                 if ($min == 0 | $cur < $min) $min = $cur;
                 if ($cur > $max) $max = $cur;
-                $cur = 0;
             }
+            if ($min == 0) {
+                $min = 0;
+            }
+            echo "Min: $min, Max: $max";
         }
+        task7($str);
     }
-    if ($cur > 0) {
-        if ($min == 0 | $cur < $min) $min = $cur;
-        if ($cur > $max) $max = $cur;
-    }
-    if ($min == 0) {
-        $min = 0;
-    }
-    echo "Min: $min, Max: $max";
     ?>
     <h2>Задание 8</h2>
     <form action="">
@@ -196,22 +223,27 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = 'baaaabaaabaaaaaab';
-    $len = strlen($str);
-    $max = 0;
-    $cur = 0;
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] == 'a') {
-            $cur++;
-            if ($cur > $max) {
-                $max = $cur;
-            }
-        } 
-        else {
+    if (isset($_GET["str8"])) {
+        $str = $_GET["str8"];
+        function task8($str) {
+            $len = strlen($str);
+            $max = 0;
             $cur = 0;
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] == 'a') {
+                    $cur++;
+                    if ($cur > $max) {
+                        $max = $cur;
+                    }
+                } 
+                else {
+                    $cur = 0;
+                }
+            }
+            echo $max;
         }
+        task8($str);
     }
-    echo $max;
     ?>
     <h2>Задание 9</h2>
     <form action="">
@@ -220,24 +252,29 @@
         <input type="submit" value="Отправить">
     </form>
     <?php 
-    $str = 'Delete (this part) please';
-    $len = strlen($str);
-    $res = '';
-    $inside = false;
-    for ($i = 0; $i < $len; $i++) {
-        if ($str[$i] == '(') {
-            $inside = true;
-            continue;
-        }
-        if ($str[$i] == ')') {
+    if (isset($_GET["str9"])) {
+        $str = $_GET["str9"];
+        function task9($str) {
+            $len = strlen($str);
+            $res = '';
             $inside = false;
-            continue;
+            for ($i = 0; $i < $len; $i++) {
+                if ($str[$i] == '(') {
+                    $inside = true;
+                    continue;
+                }
+                if ($str[$i] == ')') {
+                    $inside = false;
+                    continue;
+                }
+                if (!$inside) {
+                    $res .= $str[$i];
+                }
+            }
+            echo $res;
         }
-        if (!$inside) {
-            $res .= $str[$i];
-        }
+        task9($str);
     }
-    echo $res;
     ?>
 </body>
 </html>
