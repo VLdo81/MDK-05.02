@@ -34,7 +34,8 @@
     ?>
     <h2>Перевод массива в строку implode</h2>
     <?php 
-    $str2
+    $str2 = implode(',', $words);
+    echo $str2;
     ?>
 </body>
 </html>
